@@ -1,0 +1,55 @@
+---
+import { skills } from '../data/skills';
+import { getLangFromUrl, useTranslations, pick } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="tecnologias" class="section">
+  <div class="container">
+    <h2 class="section-title" data-reveal>{t('nav.skills')}</h2>
+
+    <div class="grid">
+      {skills.map((group, i) => (
+        <div class="card group" data-reveal style={`--reveal-delay: ${(i % 3) * 0.08}s`}>
+          <h3 class="mono">
+            <span class="hash">#</span> {pick(lang, group.label)}
+          </h3>
+          <ul>
+            {group.items.map((item) => (
+              <li class="tag">{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+  .group {
+    padding: 1.4rem 1.5rem;
+  }
+  h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  .hash {
+    color: var(--accent);
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+</style>

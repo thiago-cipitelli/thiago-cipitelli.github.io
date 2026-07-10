@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thiago-cipitelli.github.io/sitemap-index.xml
