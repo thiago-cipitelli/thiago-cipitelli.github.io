@@ -6,8 +6,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://thiago-cipitelli.github.io',
   i18n: {
-    defaultLocale: 'pt-br',
-    locales: ['pt-br', 'en'],
+    defaultLocale: 'en',
+    locales: ['en', 'pt-br'],
     routing: {
       prefixDefaultLocale: false,
     },
@@ -15,8 +15,8 @@ export default defineConfig({
   integrations: [
     sitemap({
       i18n: {
-        defaultLocale: 'pt-br',
-        locales: { 'pt-br': 'pt-BR', en: 'en' },
+        defaultLocale: 'en',
+        locales: { en: 'en', 'pt-br': 'pt-BR' },
       },
     }),
   ],

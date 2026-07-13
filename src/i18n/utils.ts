@@ -16,7 +16,7 @@ export function useTranslations(lang: Lang) {
 
 /** Path of the same page in the other locale (used by the language toggle). */
 export function altLocalePath(lang: Lang): string {
-  return lang === 'en' ? '/' : '/en/';
+  return lang === 'en' ? '/pt-br/' : '/';
 }
 
 /** Pick the right variant from a bilingual { pt, en } field. */
